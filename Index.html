@@ -98,34 +98,4 @@ button,input,textarea{font:inherit}button{cursor:pointer}.app{max-width:1100px;m
 <div id="toast" class="toast"></div>
 
 <script>
- async function koreksiJawaban(soalText, kunciText, jawabanSiswaText) {
-  // Tampilkan loading indicator jika ada
-  console.log("Mengirim ke AI...");
-
-  try {
-    const response = await fetch("/.netlify/functions/koreksi", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        soal: soalText,
-        kunciJawaban: kunciText,
-        jawabanUser: jawabanSiswaText,
-      }),
-    });
-
-    const hasil = await response.json();
-    console.log("Hasil Koreksi AI:", hasil);
-
-    // Contoh hasil: { skor: 100, isCorrect: true, alasan: "Jawaban sudah sesuai konsep." }
-    alert(`Skor: ${hasil.skor}\nAlasan: ${hasil.alasan}`);
-
-    return hasil;
-  } catch (err) {
-    console.error("Gagal terkoneksi:", err);
-  }
- }
-     </script>
-  </body>
-</html>
+ 
