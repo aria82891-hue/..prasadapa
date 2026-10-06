@@ -1,101 +1,83 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>PRASADAPA — Pramuka Satria Dasa Pusaka</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>PRASADAPA — Ujian SKU Penggalang Rakit</title>
 <style>
-:root{--red:#a61b1b;--red2:#7f1111;--gold:#e7b83d;--gold2:#c99518;--cream:#fffaf0;--ink:#251a15;--muted:#756b63;--green:#16733a;--orange:#b86600;--danger:#a61b1b;--white:#fff}
-*{box-sizing:border-box}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:linear-gradient(135deg,#f7f0e5,#fff 55%,#f3e8d6);color:var(--ink);min-height:100vh}
-button,input,textarea{font:inherit}button{cursor:pointer}.app{max-width:1100px;margin:auto;padding:18px}
-.hero{background:linear-gradient(135deg,var(--red2),var(--red));color:white;border-radius:24px;padding:20px 22px;box-shadow:0 14px 35px #4b160022;position:relative;overflow:hidden}
-.hero:after{content:"";position:absolute;width:240px;height:240px;border:2px solid #ffffff22;border-radius:50%;right:-70px;top:-90px}.brand{display:flex;align-items:center;gap:16px;position:relative;z-index:1}.logo{width:88px;height:88px;object-fit:contain;background:#fff;border-radius:18px;padding:5px}.brand h1{margin:0;font-size:30px;letter-spacing:2px}.brand h2{margin:2px 0 0;font-size:16px;font-weight:700}.brand p{margin:4px 0 0;color:#ffe7a0;font-size:14px}.card{background:#fff;border:1px solid #eadfce;border-radius:22px;padding:22px;margin-top:18px;box-shadow:0 10px 30px #4b16000e}.section-title{display:flex;justify-content:space-between;gap:12px;align-items:end;margin-bottom:15px}.section-title h2{margin:0}.pill{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:7px 12px;background:#f5ead5;color:var(--red2);font-size:12px;font-weight:800}.profile{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:12px}.field{background:#faf6ef;border:1px solid #eadfce;border-radius:15px;padding:12px}.field small{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;font-weight:800}.field strong{display:block;margin-top:3px;font-size:16px}.login-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.input{width:100%;padding:13px;border:1px solid #d9cdbb;border-radius:12px;outline:none;background:#fff}.input:focus{border-color:var(--gold2);box-shadow:0 0 0 3px #e7b83d33}.btn{border:0;border-radius:12px;padding:12px 16px;font-weight:800;background:var(--red);color:#fff;transition:.2s}.btn:hover{transform:translateY(-1px);filter:brightness(1.05)}.btn.gold{background:var(--gold);color:#3b2800}.btn.ghost{background:#f4ede2;color:var(--red2)}.btn.green{background:var(--green)}.btn.danger{background:var(--danger)}.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}.sku-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.sku{border:1px solid #e8ddcc;border-radius:18px;padding:17px;background:linear-gradient(180deg,#fff,#fcf7ee);text-align:left;min-height:150px;display:flex;flex-direction:column;justify-content:space-between;transition:.2s}.sku:hover{transform:translateY(-3px);box-shadow:0 10px 25px #3b170012;border-color:#d5b86d}.sku .num{font-size:12px;font-weight:900;color:var(--red)}.sku h3{margin:6px 0;font-size:17px}.sku p{margin:0;color:var(--muted);font-size:12px}.status{margin-top:10px;font-size:12px;font-weight:900}.status.pass{color:var(--green)}.status.fail{color:var(--danger)}.status.new{color:#8b6a1d}.hidden{display:none!important}.exam-head{display:flex;justify-content:space-between;align-items:center;gap:10px}.warning{background:#fff3d7;border:1px solid #e6c56c;color:#704e00;padding:12px 14px;border-radius:14px;font-size:13px;margin:15px 0}.progress{height:9px;background:#eee2d1;border-radius:99px;overflow:hidden;margin:12px 0 18px}.progress>div{height:100%;background:linear-gradient(90deg,var(--red),var(--gold));transition:.2s}.question{border:1px solid #eadfce;border-radius:18px;padding:18px;margin:12px 0;background:#fffdf9}.question h3{margin:0 0 8px;font-size:14px;color:var(--red2)}.question p{margin:0 0 12px;font-weight:650;line-height:1.6}.answer{min-height:140px;resize:vertical;width:100%;padding:13px;border:1px solid #d9cdbb;border-radius:12px}.exam-actions{display:flex;justify-content:space-between;gap:10px;margin-top:16px}.score{font-size:68px;font-weight:950;color:var(--red);line-height:1}.result{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px}.resultbox{border-radius:20px;padding:25px;text-align:center;background:#fff6e5;border:1px solid #ead3a1}.resultbox.pass{background:#edf9f1;border-color:#9bd2ae}.resultbox.fail{background:#fff0f0;border-color:#e2aaaa}.eval{background:#faf6ef;border:1px solid #eadfce;border-radius:18px;padding:18px}.eval li{margin:9px 0}.cert{background:#fffdf7;border:8px double var(--red);padding:30px;text-align:center;position:relative;overflow:hidden}.cert img{width:90px;height:90px;object-fit:contain}.cert h2{color:var(--red2);letter-spacing:2px}.cert .name{font-size:26px;font-weight:950;color:var(--red);margin:15px 0}.cert .line{border-top:1px solid #d4b878;margin:18px 0}.small{font-size:12px;color:var(--muted)}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#251a15;color:white;padding:12px 18px;border-radius:999px;display:none;z-index:99}.footer{text-align:center;color:#8a7d70;font-size:11px;padding:22px}
-@media(max-width:800px){.sku-grid{grid-template-columns:repeat(2,1fr)}.profile,.login-grid,.result{grid-template-columns:1fr}.brand h1{font-size:24px}.logo{width:70px;height:70px}}
-@media(max-width:500px){.app{padding:10px}.hero{border-radius:18px;padding:15px}.sku-grid{grid-template-columns:1fr 1fr;gap:9px}.sku{padding:13px;min-height:145px}.brand{gap:10px}.brand h1{font-size:20px}.brand h2{font-size:13px}.brand p{font-size:11px}.card{padding:15px;border-radius:18px}.score{font-size:55px}}
+:root {
+  --red:#8f1820; --red2:#b52631; --gold:#d6a83a; --ink:#241b18;
+  --paper:#fffdf8; --soft:#f5efe6; --line:#e5d8c9; --green:#1d7a4c;
+  --shadow:0 12px 35px rgba(55,31,18,.10);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(145deg,#f6eee3,#fffdf8);color:var(--ink)}
+button,input{font:inherit}
+.hidden{display:none!important}
+.app{max-width:1100px;margin:auto;padding:18px}
+.hero{background:linear-gradient(135deg,var(--red),#641018);color:white;border-radius:24px;padding:24px;margin-bottom:18px;box-shadow:var(--shadow)}
+.brand{display:flex;gap:16px;align-items:center}
+.logoMark{width:68px;height:68px;border:2px solid #f1d48a;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:19px;letter-spacing:1px;background:rgba(255,255,255,.08);overflow:hidden}.logoMark img{width:100%;height:100%;object-fit:cover}.login-brand{display:flex;align-items:center;gap:14px;margin-bottom:16px}.login-logo{width:92px;height:92px;object-fit:contain;border-radius:18px;border:1px solid var(--line);background:#fff;padding:4px}.level-select{appearance:auto}
+.hero h1{margin:0;font-size:31px}
+.hero h2{margin:3px 0 0;font-size:16px;font-weight:700;color:#ffe7a7}
+.hero p{margin:4px 0 0;opacity:.88;font-size:13px}
+.card{background:rgba(255,253,248,.96);border:1px solid var(--line);border-radius:22px;padding:20px;margin:16px 0;box-shadow:var(--shadow)}
+.section-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+.section-title h2{margin:0;font-size:21px}
+.small{font-size:13px;color:#756860;line-height:1.5}
+.pill{background:#f5e4b8;color:#68490c;border-radius:999px;padding:7px 11px;font-weight:800;font-size:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:13px}
+.field{background:#fbf6ef;border:1px solid var(--line);border-radius:16px;padding:14px}
+.field label{display:block;font-size:13px;font-weight:800;margin-bottom:7px}
+.input{width:100%;border:1px solid #d9c9b9;border-radius:12px;padding:12px 13px;background:white;outline:none}
+.input:focus{border-color:var(--red2);box-shadow:0 0 0 3px rgba(181,38,49,.10)}
+.btn{border:0;border-radius:13px;padding:12px 16px;font-weight:800;cursor:pointer;background:var(--red);color:#fff}
+.btn:hover{filter:brightness(1.05)}
+.btn.gold{background:#b17a10}
+.btn.ghost{background:#f2e9df;color:var(--ink)}
+.btn.green{background:var(--green)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.login-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:16px}
+.sku-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:13px}
+.sku{border:1px solid var(--line);background:#fff;border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:11px}
+.sku .num{font-size:12px;font-weight:900;color:var(--red)}
+.sku h3{margin:0;font-size:16px}
+.sku .meta{font-size:12px;color:#756860}
+.status{font-size:12px;font-weight:800}
+.status.pass{color:var(--green)} .status.work{color:#9a6500} .status.lock{color:#766a63}
+.exam-top{position:sticky;top:0;z-index:10;background:rgba(255,253,248,.95);backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:18px;padding:13px;margin-bottom:15px}
+.exam-top-row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.progress{height:9px;background:#eadfd3;border-radius:99px;overflow:hidden;margin-top:10px}
+.progress > div{height:100%;background:linear-gradient(90deg,var(--red),var(--gold));width:0}
+.question{border:1px solid var(--line);border-radius:20px;background:#fff;padding:20px;margin:14px 0}
+.qnum{font-size:12px;font-weight:900;color:var(--red);margin-bottom:8px}
+.qtext{font-size:17px;font-weight:750;line-height:1.55;margin-bottom:15px}
+.option{display:flex;gap:11px;align-items:flex-start;border:1px solid #dfd4c9;border-radius:14px;padding:13px;margin:9px 0;cursor:pointer;background:#fffdfb}
+.option:hover{background:#fbf4ea;border-color:#c9b7a7}
+.option input{margin-top:4px;accent-color:var(--red)}
+.option b{min-width:22px}
+.bottom-bar{display:flex;justify-content:space-between;gap:10px;position:sticky;bottom:10px;background:rgba(255,253,248,.94);backdrop-filter:blur(12px);padding:10px;border:1px solid var(--line);border-radius:17px}
+.result{text-align:center;padding:25px}
+.score{font-size:64px;font-weight:950;color:var(--red);line-height:1}
+.result.pass{border-color:#a8d6bd;background:#f1fbf5}
+.result.fail{border-color:#e5b6b9;background:#fff5f5}
+.result h2{margin:7px 0}
+.cert{margin-top:18px;border:8px double var(--red);border-radius:16px;padding:30px;background:#fffaf0;text-align:center}
+.cert .big{font:700 34px Georgia,serif;color:var(--red)}
+.cert .name{font:800 28px Georgia,serif;margin:20px 0 5px}
+.note{padding:12px 14px;border-radius:13px;background:#fff7db;border:1px solid #ead18b;font-size:13px;line-height:1.5}
+@media(max-width:750px){
+ .login-grid{grid-template-columns:1fr}
+ .hero h1{font-size:25px}
+ .app{padding:10px}
+ .card{padding:15px;border-radius:18px}
+ .qtext{font-size:16px}
+ .bottom-bar{flex-direction:column}
+}
 </style>
 </head>
 <body>
 <div class="app">
 <header class="hero">
- <div class="brand">
-  <img class="logo" id="brandLogo" alt="Logo Satria Dasa Pusaka">
-  <div><h1>PRASADAPA</h1><h2>Pramuka Satria Dasa Pusaka</h2><p>Gudep 01.031–01.032</p></div>
- </div>
-</header>
-
-<section id="loginPage" class="card">
- <div class="section-title"><div><h2>Selamat Datang</h2><span class="small">Masukkan identitas untuk membuka dashboard SKU.</span></div><span class="pill">PENGGALANG</span></div>
- <div class="login-grid">
-  <div>
-   <label>Nama Lengkap</label><input id="nameInput" class="input" placeholder="Nama lengkap peserta">
-   <br><br><label>Kelas</label><input id="classInput" class="input" placeholder="Contoh: VII A">
-   <br><br><label>Tingkat SKU</label>
-   <select id="levelInput" class="input"><option value="RAKIT">Penggalang Rakit</option><option value="TERAP">Penggalang Terap</option></select>
-   <br><br><button class="btn" onclick="enterDashboard()">Masuk ke Dashboard</button>
-  </div>
-  <div class="field">
-   <strong>Aturan Uji SKU</strong>
-   <p class="small">Setiap SKU berisi 3 soal uraian. Nilai 80–100 dinyatakan LULUS. Nilai 0–79 harus mengulang.</p>
-   <p class="small">Saat ujian berlangsung, peserta tidak dapat berpindah ke dashboard. Jika halaman ditutup atau dimuat ulang, jawaban yang sudah ditulis tetap disimpan dan ujian dapat dilanjutkan. Sistem tidak mengubahnya menjadi “BELUM DIKERJAKAN”.</p>
-  </div>
- </div>
-</section>
-
-<section id="dashboardPage" class="hidden">
- <div class="card">
-  <div class="section-title"><div><h2>Profil Peserta</h2><span class="small">Data yang digunakan pada hasil dan sertifikat.</span></div><button class="btn ghost" onclick="logoutDashboard()">Keluar</button></div>
-  <div class="profile">
-   <div class="field"><small>Nama</small><strong id="profileName">-</strong></div>
-   <div class="field"><small>Kelas</small><strong id="profileClass">-</strong></div>
-   <div class="field"><small>Tingkat</small><strong id="profileLevel">-</strong></div>
-  </div>
- </div>
- <div class="card">
-  <div class="section-title"><div><h2>Daftar SKU</h2><span class="small">Pilih nomor SKU untuk mengerjakan 3 soal uraian.</span></div><span class="pill" id="skuCount">0 SKU</span></div>
-  <div id="skuGrid" class="sku-grid"></div>
- </div>
-</section>
-
- 
-<section id="examPage" class="hidden card">
- <div class="exam-head"><div><span class="pill" id="examLevel">-</span><h2 id="examTitle" style="margin:8px 0 0">-</h2></div><span class="pill" id="qCounter">1/3</span></div>
- <div class="warning"><b>Mode ujian aktif.</b> Jawaban disimpan otomatis. Jika halaman ter-refresh/tertutup, jawaban tetap tersimpan dan dapat dilanjutkan dari posisi terakhir.</div>
- <div class="progress"><div id="progressBar" style="width:33%"></div></div>
- <div id="questions"></div>
- <div class="exam-actions"><button class="btn ghost" id="prevBtn" onclick="prevQuestion()">Sebelumnya</button><button class="btn" id="nextBtn" onclick="nextQuestion()">Berikutnya</button></div>
- <div style="margin-top:14px;text-align:right"><button class="btn green" id="submitBtn" onclick="submitExam()">Submit Jawaban & Nilai</button></div>
-</section>
-
-<section id="resultPage" class="hidden card">
- <div class="section-title"><div><h2 id="resultSku">Hasil SKU</h2><span class="small">Hasil tersimpan di perangkat ini.</span></div><button class="btn ghost" onclick="backDashboard()">Kembali ke Dashboard</button></div>
- <div class="result">
-  <div id="resultBox" class="resultbox">
-   <div class="small">NILAI AKHIR</div><div class="score" id="score">0</div><h2 id="resultStatus">-</h2><p id="resultDesc">-</p>
-  </div>
-  <div class="eval"><h3>Evaluasi</h3><p class="small">Bagian yang masih kurang berdasarkan kecocokan konsep, variasi istilah, sinonim, dan kelengkapan kata kunci jawaban:</p><ul id="evalList"></ul></div>
- </div>
- <div id="certWrap" class="hidden" style="margin-top:18px">
-  <div id="certificate" class="cert">
-   <img id="certLogo" alt="Logo">
-   <h2>SERTIFIKAT KELULUSAN SKU</h2><div>PRAMUKA SATRIA DASA PUSAKA</div><div>GUDEP 01.031–01.032</div>
-   <div class="line"></div><div>Diberikan kepada</div><div class="name" id="certName">-</div>
-   <div>Kelas <b id="certClass">-</b></div>
-   <p>Dinyatakan <b>LULUS</b> pada Pengujian Syarat Kecakapan Umum (SKU)</p>
-   <h3 id="certLevel">-</h3><p>SKU No. <b id="certSku">-</b></p>
-   <div class="line"></div><div>Nilai: <b id="certScore">-</b></div><p class="small">Sertifikat dibuat secara digital melalui aplikasi PRASADAPA.</p>
-  </div>
-  <br><button class="btn gold" style="width:100%" onclick="downloadCertificate()">⬇ Unduh Sertifikat (PNG)</button>
-  <div style="margin-top:12px;padding:14px;border:1px solid #e7d7b6;border-radius:14px;background:#fffaf0">
-   <strong>Verifikasi ke Pembina</strong>
-   <p class="small" style="margin:6px 0 10px">Setelah mendapatkan sertifikat, isi formulir verifikasi berikut agar hasil kelulusan dapat dilaporkan kepada Pembina.</p>
-   <button class="btn" style="width:100%" onclick="openVerificationForm()">📋 Isi Form Verifikasi ke Pembina</button>
-  </div>
- </div>
- <div id="retryWrap" class="hidden" style="margin-top:18px"><button class="btn danger" style="width:100%" onclick="retrySku()">Ulangi SKU Ini</button></div>
-</section>
-<div class="footer">PRASADAPA • Pramuka Satria Dasa Pusaka • Gudep 01.031–01.032</div>
-</div>
-<div id="toast" class="toast"></div>
-
-<script>
- 
+  <div class="brand">
+   
